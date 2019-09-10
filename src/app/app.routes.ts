@@ -11,6 +11,8 @@ import {
 	SignupComponent,
 	ComingComponent,
 	AlltixsComponent,
+	PartnerComponent,
+	AffiliateComponent,
 	NewMemberComponent
 
 	}from "./components/index.paginas";
@@ -30,6 +32,8 @@ const app_routes: Routes = [
 	{path:'signup',component:SignupComponent},
 	{path:'coming',component:ComingComponent},
 	{path:'new-member',component:NewMemberComponent},
+	{path:'new-member/partner',component:PartnerComponent},
+	{path:'new-member/affiliate',component:AffiliateComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);
