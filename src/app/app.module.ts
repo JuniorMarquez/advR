@@ -74,6 +74,7 @@ import { NewMemberComponent } from './components/new-member/new-member.component
 import { ComingComponent } from './components/coming/coming.component';
 import { AffiliateComponent } from './components/new-member/affiliate/affiliate.component';
 import { PartnerComponent } from './components/new-member/partner/partner.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -102,7 +103,8 @@ import { PartnerComponent } from './components/new-member/partner/partner.compon
     NewMemberComponent,
     ComingComponent,
     AffiliateComponent,
-    PartnerComponent
+    PartnerComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
