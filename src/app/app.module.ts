@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 //import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ArchwizardModule } from 'angular-archwizard';
 
 
 //RUTAS
@@ -32,6 +33,7 @@ import {ProductInfoService} from './services/product-info.service';
 import {CarService} from './services/car.service';
 import {DataApiService} from './services/data-api.service';
 import {ScrollTopService} from './services/scroll-top.service';
+import {UserWService} from './services/user-w.service';
 
 
 
@@ -116,7 +118,8 @@ import { PartnerComponent } from './components/new-member/partner/partner.compon
     ReactiveFormsModule,
     MatBadgeModule,
     MatTableModule,
-CarouselModule
+    ArchwizardModule,
+    CarouselModule
   ],
   exports: [
     MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,
@@ -131,7 +134,8 @@ CarouselModule
   providers: [
     TixsService,
     DataApiService,
-    ScrollTopService
+    ScrollTopService,
+    UserWService
       ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -9,7 +9,7 @@ import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.di
 import { UserWService } from "../../services/user-w.service";
 
 declare var NgForm:any;
-
+//comentario
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

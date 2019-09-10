@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders }  from '@angular/common/http';
 import { Observable }  from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
-import { isNullOrUnderfined } from 'util';
+//import { isNullOrUnderfined } from 'util';
+import { isNullOrUndefined } from "util";
 // import { AuthService } from './auth.service
 import { UserInterface } from '../models/user-interface';
 
@@ -19,14 +20,14 @@ export class AuthService {
 
 
 	registerUser(name :string, email: string, password: string){
-		const url_api ='http://localhost:3000/api/Users';
+		const url_api ='http://192.168.0.107:3000/api/Users';
 		return this.http
 		.post<UserInterface>(url_api,{name,email,password},{headers:this.headers})
 		.pipe(map(data => data));
 	}
 
 	loginUser(email:string, password:string):Observable<any>{
-		const url_api ='http://localhost:3000/api/Users/login?include=user';
+		const url_api ='http://192.168.0.107:3000/api/Users/login?include=user';
 		return this.http
 		.post<UserInterface>(url_api,{email,password},{headers:this.headers}).pipe(map(data => data));
 	}
@@ -41,27 +42,21 @@ export class AuthService {
 
 	getToken(){
 	 	return localStorage.getItem("accessToken");
-
 	  }
-
-	getCurrentUser():UserInterface{
-	  	let user_string = localStorage.getItem("currentUser");
-		if (isNullOrUnderfined(user_string)){
-			let user:UserInterface = JSON.parse(user_string);
-			return user;
-		}	  
-		else {
-			return null;
-		}
-	  }
-
-	  logoutUser(){
+	getCurrentUser(): UserInterface {
+    let user_string = localStorage.getItem("currentUser");
+	    if (!isNullOrUndefined(user_string)) {
+		      let user: UserInterface = JSON.parse(user_string);
+		      return user;
+		    } else {
+		      return null;
+			}
+  		}
+	 logoutUser(){
 	  	let accessToken = localStorage.getItem('accessToken');
-	  	const url_api = 'http://localhost:3000/api/users/logout?access_token=${accessToken}';
-	  	//const url_api = 'http://localhost:3000/api/Users/logout?access_token=${accessToken}';
-	  	localStorage.removeItem('accessToken');
-	  	localStorage.removeItem('currentUser');
-	  	return this.http.post<UserInterface>(url_api,{headers: this.headers});
-	  }
-
+		  	const url_api = 'http://192.168.0.107:3000/api/users/logout?access_token=${accessToken}';
+		   	localStorage.removeItem('accessToken');
+		  	localStorage.removeItem('currentUser');
+		  	return this.http.post<UserInterface>(url_api,{headers: this.headers});
+	 	}
 }

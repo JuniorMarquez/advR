@@ -25,6 +25,7 @@
     "@angular/router": "~8.2.0",
     "@angular/service-worker": "~8.2.0",
     "@types/jquery": "^3.3.31",
+    "angular-archwizard": "^5.0.0",
     "jquery": "^3.4.1",
     "ngx-owl-carousel-o": "^2.0.1",
     "ngx-slick-carousel": "^0.4.6",
@@ -52,6 +53,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
+    "@types/jquery": "^3.3.31",
     "typescript": "~3.5.3"
   }
 }
